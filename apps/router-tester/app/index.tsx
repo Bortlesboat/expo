@@ -33,6 +33,7 @@ const HomeIndex = () => {
       <CaseLink href="/composition-conflicts" text="Composition Conflicts" />
       <CaseLink href="/composition-rerenders" text="Composition Rerenders" />
       <CaseLink href="/modals" text="Modals" />
+      <CaseLink href="/required-screens" text="Required Screens Below" />
       <CaseLink href="/params" text="Params" />
       <CaseLink href="/suspense" text="Suspense" />
       <CaseLink href="/js-stack" text="JS Stack" />
