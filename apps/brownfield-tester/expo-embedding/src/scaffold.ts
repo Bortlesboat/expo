@@ -7,16 +7,24 @@ export async function findAppRoot(directory: string): Promise<string> {
   while (true) {
     let foundProject = false;
     for (const name of await readdir(candidate)) {
-      if (name.endsWith('.xcodeproj') && (await exists(join(candidate, name, 'project.pbxproj')))) {
+      if (
+        name.endsWith('.xcodeproj') &&
+        (await exists(join(candidate, name, 'project.pbxproj')))
+      ) {
         foundProject = true;
         break;
       }
     }
-    if (foundProject) return candidate;
+    if (
+      foundProject ||
+      (await exists(join(candidate, 'settings.gradle.kts'))) ||
+      (await exists(join(candidate, 'settings.gradle')))
+    )
+      return candidate;
     const parent = dirname(candidate);
     if (parent === candidate) {
       throw new Error(
-        'Could not find an Xcode project. Run npx expo-embedding from your native app directory or one of its subdirectories.'
+        'Could not find an Xcode project or Android Gradle settings. Run npx expo-embedding from your native app directory or one of its subdirectories.'
       );
     }
     candidate = parent;
@@ -24,7 +32,8 @@ export async function findAppRoot(directory: string): Promise<string> {
 }
 export async function scaffoldExpoProject(
   root: string,
-  versions: Record<string, string>
+  versions: Record<string, string>,
+  platform: 'ios' | 'android' = 'ios'
 ): Promise<void> {
   const directory = join(root, 'expo');
   if (!(await exists(join(directory, 'package.json')))) {
@@ -35,6 +44,15 @@ export async function scaffoldExpoProject(
     }
     await mkdir(join(directory, 'Native'), { recursive: true });
     for (const [name, contents] of Object.entries(starterFiles)) {
+      if (platform === 'android' && name.startsWith('Native/')) continue;
+      if (platform === 'android' && name === 'react-native.config.js') {
+        await writeFile(
+          join(directory, name),
+          "module.exports = { project: { android: { sourceDir: '..', appName: 'app' } } };\n",
+          { flag: 'wx' }
+        );
+        continue;
+      }
       await writeFile(join(directory, name), contents, { flag: 'wx' });
     }
     await writeFile(
