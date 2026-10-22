@@ -1,5 +1,17 @@
 # Changelog
 
+## 58.0.18
+
+### Patch Changes
+
+- [iOS] The SwiftPM plugin links an Expo module's precompiled XCFramework whenever one exists, unless the app lists the module in its `buildFromSource` autolinking option, which the plugin now honours as CocoaPods does. A module built from source whose checked-in Package.swift depends on the `ExpoModulesCoreHeaders` product is built from that manifest as it stands. ([#51661](https://github.com/expo/expo/pull/51661) by [@chrfalch](https://github.com/chrfalch))
+- Updated dependencies. ([#52017](https://github.com/expo/expo/pull/52017), [#51934](https://github.com/expo/expo/pull/51934), [#51922](https://github.com/expo/expo/pull/51922))
+  - expo-modules-autolinking@58.0.15
+  - expo-modules-core@58.0.25
+  - expo-file-system@58.0.11
+  - @expo/cli@58.1.15
+  - babel-preset-expo@58.0.20
+
 ## 58.0.17
 
 ### Patch Changes

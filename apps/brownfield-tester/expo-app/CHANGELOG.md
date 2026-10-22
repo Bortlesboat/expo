@@ -1,5 +1,15 @@
 # expo-app
 
+## 1.0.12
+
+### Patch Changes
+
+- Updated dependencies. ([#51661](https://github.com/expo/expo/pull/51661), [#52000](https://github.com/expo/expo/pull/52000))
+  - expo@58.0.18
+  - expo-glass-effect@58.0.5
+  - expo-router@58.0.26
+  - expo-dev-menu@58.0.11
+
 ## 1.0.11
 
 ### Patch Changes

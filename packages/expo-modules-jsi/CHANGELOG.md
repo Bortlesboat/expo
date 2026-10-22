@@ -1,5 +1,11 @@
 # Changelog
 
+## 58.0.18
+
+### Patch Changes
+
+- [iOS] Reduce the overhead of converting Swift arrays to JavaScript arrays. ([#52031](https://github.com/expo/expo/pull/52031) by [@tsapeta](https://github.com/tsapeta))
+
 ## 58.0.17
 
 ### Patch Changes

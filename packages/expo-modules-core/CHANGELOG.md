@@ -1,5 +1,13 @@
 # Changelog
 
+## 58.0.25
+
+### Patch Changes
+
+- [Android] Fix "Cannot use shared object that was already released" errors when a view with a shared object prop, such as the `@expo/ui` `TextInput`, is remounted right after its first render. ([#51934](https://github.com/expo/expo/pull/51934) by [@expo-tuft](https://github.com/apps/expo-tuft))
+- Updated dependencies. ([#52031](https://github.com/expo/expo/pull/52031))
+  - expo-modules-jsi@58.0.18
+
 ## 58.0.24
 
 ### Patch Changes

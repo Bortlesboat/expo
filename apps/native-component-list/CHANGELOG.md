@@ -1,5 +1,20 @@
 # native-component-list
 
+## 0.0.12
+
+### Patch Changes
+
+- Updated dependencies. ([#50401](https://github.com/expo/expo/pull/50401), [#51934](https://github.com/expo/expo/pull/51934), [#51661](https://github.com/expo/expo/pull/51661), [#51118](https://github.com/expo/expo/pull/51118), [#51119](https://github.com/expo/expo/pull/51119), [#51117](https://github.com/expo/expo/pull/51117), [#51120](https://github.com/expo/expo/pull/51120), [#51922](https://github.com/expo/expo/pull/51922), [#52000](https://github.com/expo/expo/pull/52000), [#51987](https://github.com/expo/expo/pull/51987), [#52010](https://github.com/expo/expo/pull/52010))
+  - expo-contacts@58.0.9
+  - @expo/ui@58.0.23
+  - expo@58.0.18
+  - expo-file-system@58.0.11
+  - expo-glass-effect@58.0.5
+  - expo-location@58.0.19
+  - test-suite@1.0.12
+  - expo-app-intents@0.5.12
+  - expo-router@58.0.26
+
 ## 0.0.11
 
 ### Patch Changes
